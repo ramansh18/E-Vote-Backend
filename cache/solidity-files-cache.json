@@ -1,0 +1,147 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "G:\\E-Vote-HardHat\\backend\\contracts\\CandidateRegistration.sol": {
+      "lastModificationDate": 1745072822405,
+      "contentHash": "43c528a45d5f83fb48699ce6bb8d3afa",
+      "sourceName": "contracts/CandidateRegistration.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CandidateRegistration"
+      ]
+    },
+    "G:\\E-Vote-HardHat\\backend\\contracts\\Election.sol": {
+      "lastModificationDate": 1748443582424,
+      "contentHash": "8f58bdd771a6835b45e16a48f71ca504",
+      "sourceName": "contracts/Election.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Election"
+      ]
+    },
+    "G:\\E-Vote-HardHat\\backend\\contracts\\VoterRegistration.sol": {
+      "lastModificationDate": 1745675261048,
+      "contentHash": "2adb8070dd1163a8d848e04914ed2783",
+      "sourceName": "contracts/VoterRegistration.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "VoterRegistration"
+      ]
+    },
+    "G:\\E-Vote-HardHat\\backend\\contracts\\Voting.sol": {
+      "lastModificationDate": 1748626793797,
+      "contentHash": "a085ba167409662f245a3745de9e8107",
+      "sourceName": "contracts/Voting.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ICandidateRegistration",
+        "IVoterRegistration",
+        "Voting"
+      ]
+    }
+  }
+}
