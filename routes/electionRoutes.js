@@ -6,25 +6,43 @@ const {
     getElectionById,
     startElection,
     endElection,
-    deleteElection,getApprovedCandidatesForElection,
-    getAvailableElections,updateElectionVotes,getElectionResults,getUpcomingElections,getAllCompletedElectionResults
+    deleteElection,
+    getApprovedCandidatesForElection,
+    getAvailableElections,
+    updateElectionVotes,
+    getElectionResults,
+    getUpcomingElections,
+    getAllCompletedElectionResults
 } = require("../controllers/electionController");
 
 const { protect, adminOnly } = require("../middleware/auth");
 
-// Election Routes
+// ================================
+// ROUTE ORDER IS CRITICAL!
+// Specific routes MUST come BEFORE parameterized routes (/:id, /:electionId)
+// Express matches routes from top to bottom
+// ================================
+
+// Base routes
 router.post("/", protect, adminOnly, createElection);   // Create election
-router.get("/", getElections);
-router.get('/upcoming-election',protect,getUpcomingElections)
+router.get("/", getElections);                          // Get all elections
 
-router.get("/completed",protect, getAllCompletedElectionResults);
+// Specific named routes - MUST be before /:id
+router.get('/upcoming-election', protect, getUpcomingElections);
+router.get("/completed", protect, getAllCompletedElectionResults);
+router.get("/available", getAvailableElections);
 
-router.get("/available", getAvailableElections);                          // Get all elections
-router.get("/:id", getElectionById);                    // Get single election
-router.put("/:id/start", protect, adminOnly, startElection);  // Start election
-router.put("/:id/end", protect, adminOnly, endElection);      // End election
-router.delete("/:id", protect, adminOnly, deleteElection); 
-router.get("/:electionId/candidates/approved", getApprovedCandidatesForElection);   
-router.put("/:electionId/update-votes", updateElectionVotes);
+// Parameterized routes with additional path segments - MUST be before simple /:id
 router.get('/:electionId/results', getElectionResults);
+router.get("/:electionId/candidates/approved", getApprovedCandidatesForElection);
+router.put("/:electionId/update-votes", updateElectionVotes);
+
+// Parameterized routes with actions
+router.put("/:id/start", protect, adminOnly, startElection);
+router.put("/:id/end", protect, adminOnly, endElection);
+router.delete("/:id", protect, adminOnly, deleteElection);
+
+// Generic parameterized route - MUST be LAST
+router.get("/:id", getElectionById);
+
 module.exports = router;
