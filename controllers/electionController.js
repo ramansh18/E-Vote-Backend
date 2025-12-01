@@ -38,7 +38,7 @@ exports.createElection = async (req, res) => {
 exports.getElections = async (req, res) => {
   try {
     const elections = await Election.find({
-  status: { $in: ["ongoing", "upcoming"] },
+  status: { $in: ["ongoing", "upcoming","completed"] },
 });
   console.log(elections.length)
 
