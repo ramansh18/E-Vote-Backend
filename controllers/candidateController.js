@@ -27,7 +27,7 @@ exports.toggleNominationPeriod = async (req, res) => {
     const relayerPrivateKey = process.env.RELAYER_PRIVATE_KEY;
     const relayerWallet = web3.eth.accounts.privateKeyToAccount(relayerPrivateKey);
 
-    const txData = candidateRegistrationContract.methods.toggleNomination(status, relayerWallet.address).encodeABI();
+    const txData = candidateRegistrationContract.methods.toggleNomination(status).encodeABI();
     const gas = await web3.eth.estimateGas({
       to: deployedAddresses.candidateRegistration,
       data: txData,
